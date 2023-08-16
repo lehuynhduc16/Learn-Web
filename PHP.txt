@@ -1,0 +1,185 @@
+PHP
+_____________________ 1 _____________________
+
+	+ Khai báo biến thì cần $
+	+ Khai báo hằng thì KHÔNG cần $
+$name = "John";
+
+	+ In ra màn hình:
+echo "Hello, " . $name . "!";	// in ra: Hello, John!
+** Dấu "." và "," đều có thể dùng để nối chuỗi	
+	+ Comment:	// và /*  */
+
+	+ Input:
+<?php
+echo "Nhập tên của bạn: ";
+$handle = fopen("php://stdin","r");
+$line = fgets($handle);
+$name = trim($line);
+echo "Xin chào, $name!\n";	// Xử lý và hiển thị dữ liệu
+fclose($handle);
+?>
+
+	+ Biến toàn cục:
+$bientoancuc = 'freetuts.net';
+function test_freetuts(){
+    global $bientoancuc; // gọi đến biến toàn cục
+    echo $bientoancuc;
+}
+test_freetuts();
+
+	+ Biến cục bộ
+Chỉ sử dụng trong func nào đó
+
+	+ Hằng số
+define(‘ten_hang’, ‘gia_tri’);
+
+	+ Vòng for
+for ($i = 0; $i < 100; $i++){
+    $tong += $i;
+}
+
+_____________________ 2 _____________________
+
+	- Kiểu dữ liệu INT
+$thap_phan = 123; // Số thập phân
+$so_am = -123; // Số âm
+$bat_phan = 0123; // số bát phân
+$thap_luc_phan = 0x1A; // và số thập lục phân
+
+	+ Ép kiểu sang int:
+(int)$ten_bien;
+
+	+ Kiểm tra một biến có phải INT?
+$a = '123';	// kiểu str
+$b = 123;		// kiểu int
+$c = $a + $b; // $c = 246 -> kiểu INT (do $a tự đổi kiểu sang INT)
+var_dump(is_int($c)); 	// in ra true
+var_dump(is_int($a));		// in ra false
+
+	+ Ép kiểu (tiếp...)
+$a = 'a123';
+echo (int)$a; 	// in ra 0
+$a = '12a0';
+echo (int)$a; 	// in ra 12
+
+_____________________ 3 _____________________
+
+- Boolean:
++ Các ký tự 0, "" và null	-> FALSE
++ Các ký tự còn lại 		-> TRUE
++ Check bool:		is_bool($bien);
+** Boolean không phân biệt chữ thường và hoa
+
+- Số thực:
++ float
++ double
+
+- String: Có thể sử dụng ' hoặc "
+
+_____________________ 4 _____________________
+
+	- Mảng:
+$ten_mang = array(a1, a2,...);	// khai báo
+var_dump($mang);		// in ra các phần tử
+print_r($mang);		// in ra bằng cách 2
+	Ví dụ:
+$mang = array('a', 'b');
+
+var_dump($mang);
+	// in ra:	array(2) {	// in bằng cách 1
+                		[0]=>
+                		string(1) "a"
+                		[1]=>
+                		string(1) "b"
+            		}
+print_r($mang);			// in bằng cách 2
+	// in ra:	Array
+            		(
+                		[0] => a
+                		[1] => b
+           		 )
+** Sự khác nhau giữa echo, var_dump, print_r
++ echo in ra màn hình
++ var_dump ngoài in ra còn cho biết kiểu dữ liệu, kích thước (của mảng,...)
++ print_r in ra ít thông tin hơn var_dump và nhiều hơn echo
+
+
+** Mảng ở đây có thể khởi tạo giống dict
+	Ví dụ:
+$sinhvien = array(
+'sinhvien_a' => 'Nguyễn Văn A',
+'sinhvien_b' => 'Nguyễn Văn B'
+);
+print_r($sinhvien);
+	Hoặc:
+$sinhvien = array();
+$sinhvien['sinhvien_a'] = 'Nguyễn Văn A';
+$sinhvien['sinhvien_b'] = 'Nguyễn Văn B';
+print_r($sinhvien);
+
+_____________________ 5 _____________________
+
+
+
+_____________________ 6 _____________________
+
+
+
+_____________________ 7 _____________________
+
+
+
+_____________________ 8 _____________________
+
+
+
+_____________________ 9 _____________________
+
+
+
+_____________________ 10 _____________________
+
+
+
+_____________________ 11 _____________________
+
+
+
+_____________________ 12 _____________________
+
+
+
+_____________________ 13 _____________________
+
+
+
+_____________________ 14 _____________________
+
+
+
+_____________________ 15 _____________________
+
+
+
+_____________________ 16 _____________________
+
+
+
+_____________________ 17 _____________________
+
+
+
+_____________________ 18 _____________________
+
+
+
+_____________________ 19 _____________________
+
+
+
+_____________________ 20 _____________________
+
+
+
+_____________________ End ____________________

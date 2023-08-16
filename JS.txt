@@ -1,0 +1,450 @@
+JavaScript
+_____________________ 1 _____________________
+
+	+ In ra màn hình:
+console.log(...);
+
+	+ Đặc biệt: Có thể sử dụng phép trừ giữa 2 tring là số
+console.log('22' - '20');	// -> Output là 2
+console.log('1'+'1'-1);	// -> Output là 10
+
+	+ array (giống list)
+a = [1, 2, 'a'];
+
+	+ object (giống dictionary)
+obj = { a: 'x', b: 'y' };
+
+	+ Kiểm tra kiểu dữ liệu:
+console.log(typeof tên_biến);
+
+_____________________ 2 _____________________
+
+	+ Hằng số
+const PI = 3.1414927;
+** Hằng số là không thể thay đổi. Ví dụ PI=PI+1 -> sẽ gây lỗi
+
+	+ Hằng số object có thể CẬP NHẬT THÊM. Ví dụ:
+const car = {type:"Fiat", model:"500", color:"white"};
+car.color = "red";
+-> sẽ cập nhật color:'red' vào object car
+
+	+ Nhưng không thể thay đổi các giá trị đã có. Ví dụ:
+const car = {type:"Fiat", model:"500", color:"white"};
+car = {type:"Volvo", model:"EX60", color:"red"};    //-> ERROR
+
+
+	+ Có thể cập nhật trên array:
+const cars = ["Saab", "Volvo", "BMW"];
+
+cars[0] = "Toyota";	// có thể cập nhật lại cars[0]
+-> [ 'Toyota', 'Volvo', 'BMW' ]
+
+cars.push("Audi");	// có thể thêm "Audi" vào cars
+-> [ 'Toyota', 'Volvo', 'BMW', 'Audi' ]
+
+** Nhưng không được thay đổi lại. Ví dụ:
+cars = ["Toyota", "Volvo", "Audi"];    // ERROR
+
+_____________________ 3 _____________________
+
+	+ Vòng while và do-while giống  C++
+
+	+ Vòng for-in:
+for (variable in object) {		// dành cho object
+	statement
+}
+	Ví dụ:
+var person = {fname:"Vuong", lname:"Trung", age: 31}; 
+var x;
+for (x in person) {
+  console.log('property ' + x + ' in object is ' + person[x]);
+}
+	-> in ra
+	property fname in object is Vuong
+	property lname in object is Trung
+	property age in object is 31
+
+
+	+ Vòng for-of:
+for (variable of iterable) {		// dành cho string, array,...
+	statement
+}
+	Ví dụ 1:
+let iterable = [2, 4, 6];
+for (const value of iterable) {
+	console.log(value);
+}
+	-> in ra
+	2
+	4
+	6
+
+	Ví dụ 2:
+let iterable = 'hlw';
+for (let value of iterable) {
+	console.log(value);
+}
+// h
+// l
+// w
+
+_____________________ 4 _____________________
+
+	+ Chuyển  int sang string:
+a = 4;
+a = a.toString();
+
+	+ Cắt chuỗi:
+str = "hello"
+console.log(str.slice(1, 4))		// in ra 'ell'
+** slice(a, b) cắt từ a đến b-1 (giống Python)
+Và cũng có thể sử dụng str.slice(0, -2)	// in ra 'hel'
+
+	+ Reverse:
+** hàm reverse() chỉ sử dụng cho array. Vì vậy cần chuyển đổi
+
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
+
+let originalString = "Hello, world!";
+let reversedString = reverseString(originalString);
+	// in ra "!dlrow ,olleH"
+
+_____________________ 5 _____________________
+
+	- Date():
+
+	+ Khai báo biến thời gian:
+new Date();
+new Date(value);
+new Date(dateString);
+new Date(year, monthIndex [, day [, hours [, minutes [, seconds [, milliseconds]]]]]);
+
+**
++ Lưu ý: monthIndex: Giá trị số nguyên đại diện cho tháng, bắt đầu với 0 <- Tháng Một đến 11 <- Tháng Mười Hai.
++ ... các biến thuộc tính khác là tùy chọn
++ nếu không điền thì ngày,tháng,năm sẽ lấy mặc định là 1; và giờ,phút,giây sẽ lấy mặc định là 0
+
+	Ví dụ:
++ var date1 = new Date(); 						// Current date
++ var date2 = new Date('December 17, 1995 03:24:00');	// Sun Dec 17 1995 03:24:00 GMT...
++ var date3 = new Date('1995-12-17T03:24:00');		// Sun Dec 17 1995 03:24:00 GMT...
++ var date = new Date(2018, 9); 					// Thu Oct 01 2018 00:00:00 GMT...
+
++ date = new Date(2018, 9, 25); 					// Sun Oct 25 2018 00:00:00 GMT ...
++ date = new Date(2018, 9, 25, 6); 					// Sun Oct 25 2018 06:00:00 GMT...
+
+	- Một số phương thức thông dụng:
++ getDate()   			// Nó trả về giá trị số nguyên từ 1 đến 31 đại diện cho ngày cho ngày đã chỉ định trên cơ sở giờ địa phương.
++ getDay()    			// Nó trả về giá trị nguyên từ 0 đến 6 đại diện cho ngày trong tuần trên cơ sở giờ địa phương.
++ getFullYears()  		// Nó trả về giá trị số nguyên biểu thị năm trên cơ sở giờ địa phương.
++ getHours()  			// Nó trả về giá trị nguyên từ 0 đến 23 đại diện cho giờ trên cơ sở giờ địa phương.
++ getMilliseconds() 		// Nó trả về giá trị số nguyên từ 0 đến 999 đại diện cho mili giây trên cơ sở thời gian địa phương.
++ getMinutes()    		// Nó trả về giá trị nguyên từ 0 đến 59 đại diện cho số phút trên cơ sở giờ địa phương.
++ getMonth()  			// Nó trả về giá trị nguyên từ 0 đến 11 đại diện cho tháng trên cơ sở giờ địa phương.
++ getSeconds()    		// Nó trả về giá trị nguyên từ 0 đến 60 đại diện cho giây trên cơ sở thời gian địa phương.
++ getUTCDate()    		// Nó trả về giá trị số nguyên từ 1 đến 31 đại diện cho ngày cho ngày đã chỉ định trên cơ sở thời gian thế gới.
++ getUTCDay() 			// Nó trả về giá trị nguyên từ 0 đến 6, đại diện cho ngày trong tuần trên cơ sở thời gian thế giới.
++ getUTCFullYears()   	// Nó trả về giá trị nguyên biểu thị năm trên cơ sở thời gian thế giới.
++ getUTCHours()   		// Nó trả về giá trị nguyên từ 0 đến 23 đại diện cho giờ trên cơ sở thời gian thế giới.
++ getUTCMinutes() 		// Nó trả về giá trị nguyên từ 0 đến 59 đại diện cho số phút trên cơ sở thời gian thế giới.
++ getUTCMonth()   		// Nó trả về giá trị nguyên từ 0 đến 11, đại diện cho tháng trên cơ sở thời gian thế giới+.
++ getUTCSeconds() 		// Nó trả về giá trị số nguyên từ 0 đến 60 đại diện cho giây trên cơ sở thời gian thế giới.
++ setDate()   			// Nó đặt 1 giá trị ngày cho ngày cụ thể trên cơ sở giờ địa phương.
++ setDay()    			// Nó đặt ngày cụ thể trong tuần trên cơ sở giờ địa phương.
++ setFullYears()  		// Nó đặt giá trị năm cho ngày đã chỉ định trên cơ sở giờ địa phương.
++ setHours()  			// Nó đặt giá trị giờ cho ngày đã chỉ định trên cơ sở giờ địa phương.
++ setMilliseconds()   	// Nó đặt giá trị mili giây cho ngày đã chỉ định trên cơ sở giờ địa phương.
++ setMinutes()    		// Nó đặt giá trị phút cho ngày đã chỉ định trên cơ sở giờ địa phương.
++ setMonth()  			// Nó đặt tháng cho ngày được chỉ định trên cơ sở giờ địa phương.
++ setSeconds()    		// Nó đặt giây cho ngày được chỉ định trên cơ sở giờ địa phương.
++ setUTCDate()    		// Nó đặt ngày cụ thể trong tuần trên cơ sở giờ thế giới.
++ setUTCDay() 			// Nó đặt ngày cụ thể trong tuần trên cơ sở thời gian thế giới.
++ setUTCFullYears()   	// Nó đặt giá trị năm cho ngày đã chỉ định trên cơ sở thời gian thế giới.
++ setUTCHours()   		// Nó đặt giá trị giờ cho ngày đã chỉ định trên cơ sở thời gian thế giới.
++ setUTCMilliseconds()    // Nó đặt giá trị mili giây cho ngày đã chỉ định trên cơ sở thời gian thế giới.
++ setUTCMinutes() 		// Nó đặt giá trị phút cho ngày đã chỉ định trên cơ sở thời gian thế giới.
++ setUTCMonth()   		// Nó đặt giá trị phút cho ngày đã chỉ định trên cơ sở thời gian thế giới.
++ setUTCSeconds() 		// Nó đặt giá trị giây cho ngày đã chỉ định trên cơ sở thời gian thế giới.
++ toDateString()  		// Nó trả về phần ngày của một đối tượng Date.
++ toISOString()   		// Nó trả về ngày ở dạng chuỗi định dạng ISO.
++ toJSON()    			// Nó trả về một chuỗi đại diện cho đối tượng Date. Nó cũng tuần tự hóa đối tượng Date trong quá trình tuần tự hóa JSON.
++ toString()  			// Nó trả về ngày ở dạng chuỗi.
++ toTimeString()  		// Nó trả về phần thời gian của một đối tượng Date.
++ toUTCString()   		// Nó chuyển đổi ngày được chỉ định dưới dạng chuỗi bằng múi giờ UTC.
++ valueOf()   			// Nó trả về giá trị nguyên thủy của một đối tượng Date.
+
+_____________________ 6 _____________________
+
+	- Đối tượng:
+var datas = {
+	name: "Trung", 
+	age: "31",
+	adress: "Ha Noi"
+};
+
+- Các phương thức với đối tượng
++ Object.assign()     // Sao chép các thuộc tính có thể đếm được và sở hữu từ một đối tượng nguồn sang một đối tượng đích
+	Ví dụ: var obj = Object.assign(o, o1, o2, o3);
+-> Sao chép LẦN LƯỢT các thuộc tính từ o1, o2, o3 sang o.
+Nếu trùng key thì lấy value được cập nhật mới nhất.
+
++ Object.create()     // Tạo một đối tượng mới với các thuộc tính và đối tượng nguyên mẫu được chỉ định.
+	Ví dụ:
+function run(name, job) {
+	const person = {
+	  name: "",
+	  job: "",
+	  printIntroduction: function () {
+		console.log(`My name is ${this.name}. My job is ${this.job}`);
+	  }
+	};
+	
+	const me = Object.create(person);
+	me.name = name;
+	me.job = job;
+	me.printIntroduction();
+}
+
++ Object.defineProperty()     // Khai báo hay xác định thuộc tính của object
++ Object.defineProperties()       // Tạo mới hay khai báo nhiều thuộc tính của object
+
++ Object.entries()        // Trả về một mảng với các mảng của các tên thuộc tính, giá trị.
+	Ví dụ:
+const obj = { foo: 'bar', baz: 1988};
+console.log(Object.entries(obj));		// [ ['foo', 'bar'], ['baz', 1988] ]​
+
++ Object.freeze()     // Ngăn chặn các thuộc tính hiện có bị loại bỏ.
++ Object.getOwnPropertyDescriptor()       // Trả về một mô tả thuộc tính cho thuộc tính được chỉ định của đối tượng được chỉ định.
++ Object.getOwnPropertyDescriptors()      // Trả về tất cả các mô tả thuộc tính riêng của một đối tượng nhất định.
++ Object.getOwnPropertyNames()        // Trả về một mảng của tất cả các thuộc tính (liệt kê hoặc không) được tìm thấy.
++ Object.getOwnPropertySymbols()      // Trả về một mảng của tất cả các thuộc tính khóa ký hiệu riêng.
++ Object.getPrototypeOf()     // Trả về nguyên mẫu của đối tượng đã chỉ định.
++ Object.is()     // Xác định xem hai giá trị có cùng giá trị hay không
++ Object.isExtensible()       // Xác định nếu một đối tượng có thể mở rộng
++ Object.isFrozen()       // Xác định nếu một đối tượng đã bị đóng băng.
++ Object.isSealed()       // Xác định nếu một đối tượng được niêm phong.
++ Object.keys()       // Trả về một mảng các tên thuộc tính riêng của đối tượng đã cho.
++ Object.preventExtensions()      // Ngăn chặn mọi phần mở rộng của một đối tượng.
++ Object.seal()       // Ngăn các thuộc tính mới được thêm vào và đánh dấu tất cả các thuộc tính hiện có là không thể cấu hình.
++ Object.setPrototypeOf()     // Đặt nguyên mẫu của một đối tượng được chỉ định cho một đối tượng khác.
++ Object.values()     // Trả về một mảng các giá trị.
+
+_____________________ 7 _____________________
+
+	- Mảng:
+	+ arr.length		// độ dài của mảng
+
+	+ Array.concat()	// nối 2 hoặc nhiều mảng với nhau
+Ví dụ: nums = num1.concat(num2, num3);
+
+	+ Array.every()		// kiểm tra tất cả các phần tử trong arr có thỏa mã điều kiện nào đó không
+Cú pháp: arr.every(callback(element[, index[, array]])[, thisArg])
+Trong đó:
+callback: Một hàm để kiểm tra cho từng phần tử, lấy ba đối số:
+	element: Phần tử hiện tại đang được xử lý trong mảng.
+	index (Optional): Chỉ mục của phần tử hiện tại đang được xử lý trong mảng.
+array (Optional): Các mảng được gọi theo.
+thisArg: Một giá trị để sử dụng như thế này khi thực hiện callback.
+
+	Ví dụ:
+function isBelowThreshold(currentValue) {
+  	return currentValue < 40;
+}
+var array1 = [1, 30, 39, 29, 10, 13];
+console.log(array1.every(isBelowThreshold));			// in ra: expected output: true
+
+	+ Array.some()		// có phần từ thỏa mãn điều kiện
+	Ví dụ:
+function check(num){
+	return num%2==0;
+}
+function run(data) {
+	var inValid = data.some(check);
+	if (inValid) {
+		console.log("Yes");
+	} else {
+		console.log("No");
+	}
+}
+
+	+ Array.filter()		// in ra các phần tử thõa mãn điều kiện
+
+	+ Array.find(), Array.findIndex()	// in ra giá trị và index của phần tử đầu tiên thỏa mãn
+	Ví dụ:
+function check(num){
+	return num > 0;
+}
+function run (data) {
+	num = data.find(check);
+	idx = data.findIndex(check);
+	if (idx>=0){
+		console.log(idx, num);
+	}
+	else{
+		console.log("No result");
+	}
+}
+
+	+ Array.forEach()		// in ra từng phần tử thỏa mãn
+	Ví dụ:									\\ Xem thêm
+function run(data) {
+	data.forEach(function(element) {
+		if(element%5==0){
+			console.log(element);
+		}
+	});
+}
+
+	+ Array.inclues()
+	Ví dụ:
+function run(data) {
+	kq = data.includes(5)
+	console.log(kq);
+}
+
+	+ Array.indexOf(), Array.lastIndexOf()		// in ra vị trí đầu tiên và cuối cùng của 1 phần tử thỏa mãn yêu cầu
+	Ví dụ:
+function run(data){
+	first = data.indexOf(2);
+	end = data.lastIndexOf(2);
+	console.log(first, end);
+}
+
+	+ Array.join()
+	+ Array.map()
+	+ Array.shift()				// lấy ra phần tử đầu tiên và XÓA
+	+ Array.unshift()			// thêm một hoặc nhiều phần tử vào vị trí đầu mảng sau đó trả về chiều dài của mảng mới
+	Ví dụ:
+array1 = [1, 2, 3];
+console.log(array1.unshift(4, 5));	// in ra [4, 5, 1, 2, 3]
+
+	+ Array.pop()				// lấy ra phần tử cuối cùng và XÓA
+	+ Array.push()				// thêm phần tử vào cuối arr
+	+ Array.sort(), Array.reverse()
+
+
+** TỔNG KẾT:
++ Các hàm như every, some, filter, find, findIndex, map cần sử dụng thêm function để kiểm tra điều kiện
++ Các hàm còn lại như forEach, includes, indexOf, lastIndexOf, sort, reverse thì không cần function này
+
+____________________ 8 _____________________
+
+	- Chuỗi:
+
+	+ String.length		// trả về độ dài của chuỗi
+	+ String.prototype	// cho phép bạn thêm thuộc tính/phương thức
+Cú pháp: object.prototype.name = value
+	Ví dụ:
+String.prototype.is_big = function(){
+	return this.length > 10;
+}
+function run(name) {
+	var result = name.is_big();
+	console.log(result);
+}
+
+
+	- Các phương thức trong chuỗi:
++ charAt()             	    	// Nó cung cấp giá trị char hiện tại tại chỉ mục được chỉ định.
++ charCodeAt()		    	// Nó cung cấp giá trị Unicode của một ký tự có trong chỉ mục được chỉ định.
++ concat()             	    	// Nó cung cấp một sự kết hợp của hai hoặc nhiều chuỗi.
++ indexOf()           	    	// Nó cung cấp vị trí của một giá trị char có trong chuỗi đã cho.
++ lastIndexOf()      	    	// Nó cung cấp vị trí của một giá trị char có trong chuỗi đã cho bằng cách tìm kiếm một ký tự từ vị trí cuối cùng.
++ search()            	    	// Nó tìm kiếm một biểu thức chính quy định trong một chuỗi đã cho và trả về vị trí của nó nếu xảy ra khớp.
++ match()          	    	// Nó tìm kiếm một biểu thức chính quy định trong một chuỗi đã cho và trả về biểu thức chính quy đó nếu xảy ra khớp.
++ replace()            	    	// Nó thay thế MỘT chuỗi nhất định với sự thay thế được chỉ định.
++ str.replace(/a/gi, '4')	// Nó thay thế TẤT CẢ chuỗi nhất định với sự thay thế được chỉ định.	(ở đây là thay tất cả chữ a bằng số 4)
+
++ substr()             	    	// Nó được sử dụng để tìm nạp một phần của chuỗi đã cho trên cơ sở vị trí và độ dài bắt đầu được chỉ định.
++ substring()          	    	// Nó được sử dụng để tìm nạp một phần của chuỗi đã cho trên cơ sở chỉ mục đã chỉ định.
++ slice()          		    	// Nó được sử dụng để tìm nạp một phần của chuỗi đã cho. Nó cho phép chúng ta gán chỉ số tích cực cũng như tiêu cực.
++ toLowerCase()      	    	// Nó chuyển đổi chuỗi đã cho thành chữ thường.
++ toLocaleLowerCase()	// Nó chuyển đổi chuỗi đã cho thành chữ thường trên cơ sở ngôn ngữ hiện tại của máy chủ.
++ toUpperCase()       	// Nó chuyển đổi chuỗi đã cho thành chữ in hoa.
++ toLocaleUpperCase()	// Nó chuyển đổi chuỗi đã cho thành chữ in hoa trên cơ sở ngôn ngữ hiện tại của máy chủ.
++ toString()          		// Nó cung cấp một chuỗi đại diện cho đối tượng cụ thể.
++ valueOf()            		// Nó cung cấp giá trị nguyên thủy của đối tượng chuỗi.
++ split()          			// Biến 1 chuỗi thành 1 mảng các chuỗi, bằng cách tách chuỗi theo ký tự dc chỉ định.
++ includes()           		// Xác định xem một chuỗi có thể được tìm thấy trong một chuỗi khác hay không, trả về true hoặc false khi thích hợp.
++ trim()				// Xóa bỏ khoảng trắng ở đầu vào cuối chuỗi.
++ trimStart() / trimLeft() 	// Xóa bỏ khoảng trống bên trái/bắt đầu của chuỗi.
++ trimEnd() / trimRight()	// Xóa bỏ khoảng trống bên phải/kết thúc của chuỗi.
+
+_____________________ 9 _____________________
+
+	- Toán học (thư viện Math):
++ Math.cbrt()	:  Căn bậc 3 của 1 số
+
++ Math.hypot()	: Căn bậc 2 của tổng các số
+VD: console.log(Math.hypot(3, 4))	-> in ra 5
+
++ ... Các hàm khác dùng như trong Python
+
+_____________________ 10 _____________________
+
+	- Số học (thư viện Number):
++ Number.isFinite()       // Xác định xem giá trị đã cho có phải là số hữu hạn hay không.
+	VD: Number.isFinite(1/0); 		// in ra false
+	      Number.isFinite(10/5); 	// in ra true
+
++ Number.isInteger()      // Xác định xem giá trị đã cho có phải là số nguyên hay không.
+
++ Number.parseFloat()     // Chuyển đổi chuỗi đã cho thành một số dấu phẩy động.
+
++ Number.parseInt()       // Chuyển đổi chuỗi đã cho thành một số nguyên.
+	VD: a = Number.parseInt('20 is my age')		// in ra 20 (chỉ in ra nếu ĐẦU string là số)
+
++ số.toFixed()      // Trả về chuỗi đại diện cho một số có chữ số chính xác sau dấu thập phân.
+!!!	VD: (1/2).toFixed(2)		// in ra 0.50
+*** Hàm Math.round chỉ làm tròn thành số nguyên -> muốn làm tròn sau dấu phẩy thì dùng toFixed()
+
++ Kiểm tra một số có phải SỐ không
+	isNaN(n) == false			// isNaN in ra true nếu n không phải số, và ngược lại
+
+
+
+
+
+_____________________ 11 _____________________
+
+
+
+_____________________ 12 _____________________
+
+
+
+_____________________ 13 _____________________
+
+
+
+_____________________ 14 _____________________
+
+
+
+_____________________ 15 _____________________
+
+
+
+_____________________ 16 _____________________
+
+
+
+_____________________ 17 _____________________
+
+
+
+_____________________ 18 _____________________
+
+
+
+_____________________ 19 _____________________
+
+
+
+_____________________ 20 _____________________
+
+
+
+_____________________ End ____________________
