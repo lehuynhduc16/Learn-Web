@@ -34,11 +34,6 @@ Chỉ sử dụng trong func nào đó
 	+ Hằng số
 define(‘ten_hang’, ‘gia_tri’);
 
-	+ Vòng for
-for ($i = 0; $i < 100; $i++){
-    $tong += $i;
-}
-
 _____________________ 2 _____________________
 
 	- Kiểu dữ liệu INT
@@ -53,7 +48,7 @@ $thap_luc_phan = 0x1A; // và số thập lục phân
 	+ Kiểm tra một biến có phải INT?
 $a = '123';	// kiểu str
 $b = 123;		// kiểu int
-$c = $a + $b; // $c = 246 -> kiểu INT (do $a tự đổi kiểu sang INT)
+$c = $a + $b; 	// $c = 246 -> kiểu INT (do $a tự đổi kiểu sang INT)
 var_dump(is_int($c)); 	// in ra true
 var_dump(is_int($a));		// in ra false
 
@@ -112,6 +107,7 @@ $sinhvien = array(
 'sinhvien_b' => 'Nguyễn Văn B'
 );
 print_r($sinhvien);
+
 	Hoặc:
 $sinhvien = array();
 $sinhvien['sinhvien_a'] = 'Nguyễn Văn A';
@@ -120,23 +116,166 @@ print_r($sinhvien);
 
 _____________________ 5 _____________________
 
+- Toán tử quan hệ:
+$a = ’123′
+$b = 123
+->	phép ($a == $b) cho kết quả là true
+->	phép ($a === $b) cho kết quả false vì khác kiểu dữ liệu
 
+Vậy,	== chỉ so sánh giá trị
+	=== so sánh cả giá trị và kiểu dữ liệu
 
 _____________________ 6 _____________________
 
+	- if-else, for, while, do-while giống trong C++
 
+	- foreach
+$nam = array(		// Danh sách các năm
+    1990,
+    1991,
+    1992
+);
+foreach ($nam as $key => $value){
+	echo $key, " ";
+    	echo $value, " ";		//Dùng foreach xuất ra các năm trong $nam
+}
+	// in ra: 0 1990 1 1991 2 1992 
+
+	+ Cách khác (nếu chỉ muốn lấy value)
+foreach ($nam as $value){
+    echo $value;
+}
 
 _____________________ 7 _____________________
 
+	+ break, continue giống trong C++
+	+ goto
+$a = $b = 12;
+echo $a;
+goto label_end;	// nhảy xuống dòng cuối cùng
+echo $b;
+label_end;			// chỉ in a mà không in b
 
+	+ die() và exit() có chức năng tương tự nhau
+Khi gặp lệnh này, chương trình sẽ kết thúc ngay lập tức
 
 _____________________ 8 _____________________
 
+	- Xử lý chuỗi
 
+	+ explode ( $delimiter , $string)
+Giống hàm split(str, delimeter)
+
+	+ implode($delimiter, $piecesarray);
+Giống hàm join
+
+	+ ord ($string)
+char to số trong ASCII
+
+	+ strlen($string)
+Đếm số ký tự string
+
+	+ str_word_count($str)
+Đếm số từ trong str
+
+	+ str_repeat(  $str,  int $n  )
+Hàm này lặp chuỗi $str $n lần.
+	Ví dụ:
+echo str_repeat( 'Hello', 3 );
+// in ra: HelloHelloHello
+
+	+ str_replace( $chuoi_tim, $chuoi_thay_the, $chuoi_nguon )
+Hàm này tìm kiếm và thay thế chuỗi.
+	Ví dụ:
+str_replace(array(a1, a2), array(b1, b2), str)
+-> Thay a1 bằng b1, a2 bằng b2
+
+	+ substr( $string,  $start, $length )
+slicing
+
+	+ strstr( $string, $ky_tu_cho_truoc )
+Tách một chuỗi bắt đầu từ  $ky_tu_cho_truoc cho đến hết chuỗi.
+	Ví dụ:
+echo strstr('freetuts.net Xin Chào', 'Xin');
+// in ra: Xin Chào
+
+	+ strpos($str, $chuoi_tim )
+Tìm vị trí của chuỗi $chuoi_tim trong chuỗi $str, kết quả trả về false nếu không tìm thấy.
+
+	+ strtolower($str);
+	+ strtoupper($string );
+	+ ucfirst( $string )
+Chuyển ký tự đầu tiên chuỗi $string sang chữ hoa
+	+ ucwords( $string )
+Chuyên từ đầu tiên trong chuỗi $string sang chữ hoa
+	+ trim($string, $ky_tu);
+Xóa ký tự $ky_tu nằm ở đầu và cuối chuỗi $str, nếu ta không nhập $ky_tu thì mặc định nó hiểu là xóa khoảng trắng.
+	+ ltrim($string, $ky_tu);
+Tương tự như trim nhưng chỉ xóa bên trái
+	+ rtrim($string, $ky_tu)
+Tương tự như trim nhưng chỉ xóa bên phải
+
+	+ Thao khảo thêm
+https://freetuts.net/cac-ham-xu-ly-chuoi-trong-php-20.html
 
 _____________________ 9 _____________________
 
+	- Mảng
 
+	+ array_change_key_case($array, $case)
+Chuyển tất cả các key trong mảng $array sang chữ hoa nếu $case = 1 và sang chữ thường nếu $case = 0.
+Có thể dùng hằng số CASE_UPPER thay cho số 1 và CASE_LOWER thay cho số 0.
+
+	+ array_combine($array_keys, $array_values)
+	Ví dụ:
+$array_keys = array('a', 'b', 'c');
+$array_values = array('one', 'two', 'three');
+print_r(array_combine($array_keys, $array_values));
+/* in ra:	Array(
+		[a] => one
+		[b] => two
+		[c] => three;
+		)
+*/
+
+	+ array_count_values ( $array )
+Đếm số lần xuất hiện của các phần tử giống nhau trong mảng $array và trả về một mảng kết quả.
+	Ví dụ:
+$array = array(1, "hello", 1, "world", "hello");
+print_r(array_count_values($array));
+	//in ra:
+	Array (
+	[1] => 2;
+	[hello] => 2;
+	[world] => 1
+	)
+
+	+ array_push(&$array, $add_value1, $add_value2, $add_value…)
+Thêm phần tử vào array
+
+	+ array_pop(&$array)
+Xóa phần tử CUỐI CÙNG trong mảng $array và trả về phần tử đã xóa
+
+	+ array_shift(&$array)
+Xóa phần tử ĐẦU TIÊN ra khỏi mảng $array và trả về phần tử đã xóa
+
+	+ array_unshift(&$array, $value1, $value2, …)
+Thêm các giá trị $value1, $value2, … vào ĐẦU mảng $array.
+
+	+ is_array($variable).
+Kiểm tra một biến có phải kiểu mảng hay không, kết quả trả về true nếu phải và false nếu không phải
+
+	+ in_array($needle, $haystackarray)
+Kiểm tra giá trị $needle có nằm trong mảng $haystackarray không. trả về true nếu có và flase nếu không có.
+
+	+ array_key_exists($key, $searcharray)
+Kiểm tra key $key có tồn tại trong mảng $searcharray không, trả về true nếu có và false nếu không có.
+
+	+ array_unique( $array )
+Loại bỏ giá trị trùng trong mảng $array
+
+	+ array_values ($array )
+Chuyển mảng $array sang dạng mảng chỉ mục.
 
 _____________________ 10 _____________________
 
