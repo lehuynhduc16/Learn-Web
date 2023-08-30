@@ -28,7 +28,7 @@ const car = {type:"Fiat", model:"500", color:"white"};
 car.color = "red";
 -> sẽ cập nhật color:'red' vào object car
 
-	+ Nhưng không thể thay đổi các giá trị đã có. Ví dụ:
+	+ Nhưng không thể thay đổi các giá trị ĐÃ CÓ. Ví dụ:
 const car = {type:"Fiat", model:"500", color:"white"};
 car = {type:"Volvo", model:"EX60", color:"red"};    //-> ERROR
 
@@ -57,7 +57,7 @@ for (variable in object) {		// dành cho object
 var person = {fname:"Vuong", lname:"Trung", age: 31}; 
 var x;
 for (x in person) {
-  console.log('property ' + x + ' in object is ' + person[x]);
+	console.log('property ' + x + ' in object is ' + person[x]);
 }
 	-> in ra
 	property fname in object is Vuong
