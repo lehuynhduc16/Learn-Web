@@ -1,0 +1,197 @@
+Chương 2: Tổng quan về HTML và HTML5
+_____________________ 1 _____________________
+
+	- Thẻ h1
++ Thẻ h1 chưa chắc là thẻ có kích cỡ lớn nhất mà là thẻ quan trọng nhất
++ h1, h2,... giảm dần về mức độ quan trọng
++ Thẻ h1 thường dùng để đặt cho tiêu đề của bài viết
++ Chỉ nên có 1 thẻ h1 trong mỗibài viết
+
+_____________________ 2 _____________________
+
+	- Các thẻ thông dụng
++ thẻ <a>: gắn link, liên kết
+
++ thẻ <strong>: in đậm
+	VD: <p>Google là một công ty <strong>lớn</strong> trên thế giới.</p>
+
++ thẻ <u>: gạch dưới văn bản
+** Tuy nhiên, để gạch chân thì nên sử dụng CSS thay vì sử dụng thẻ u vì có thể gây nhầm lẫn với link (như trong thẻ a)
+
++ thẻ <em>: chữ nghiêng
+
++ thẻ <s>: gạch ngang văn bản
+
++ thẻ <hr> ~ \n (xuống dòng - horizontal rule)
+
+_____________________ 3 _____________________
+
+	- HTML5 được thiết kế đáp ứng các mục tiêu chính sau:
++ Làm cho mã dễ đọc và thân thiện hơn khi hiển thị
++ Giảm sự chồng chéo giữa HTML, CSS và JS
++ Cải thiện khả năng đáp ứng và tính nhất quán của thiết kế trên các trình duyệt
++ Hỗ trợ các đối tượng tài liệu đa phương tiện mà không cần cài đặt Flash hoặc các plugin khác
+
+	- Điểm mạnh khác:
++ Với HTML5, bằng cách sử dụng thẻ <svg>, có thể thêm đồ họa vector trực tiếp vào tài liệu HTML
+	VD: Vẽ hình tròn
+<svg width="400" height="200">
+	<circle cx="150" cy="100" r="50" style="fill:#900000; stroke:#000000; stroke-width:5;" />
+</svg>
+
++ placeholder cung cấp nhiều dạng hơn, bao gồm: ngày giờ, ngày giờ địa phương, ngày, tháng, tuần, thời gian, số, phạm vi, email và url
+
+_____________________ 4 _____________________
+
+<!DOCTYPE html>
+<html lang=”en” manifest="/cache.appcache">
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" rel="noopener" target="_blank" href="bootstrap/css/bootstrap.min.css">
+        <style>
+        </style>
+    </head>
+
+    <body>
+    </body>
+</html>
+
+
+	- Cách sử dụng HTML5:
++ Cần chọn language ở đầu đoạn code, nếu không chọn thì nó sẽ là ngôn ngữ hệ thống
++ Thuộc tính manifest trỏ đến tệp kê khai của ứng dụng của bạn.
+   Đây là danh sách các tài nguyên mà ứng dụng web của bạn có thể cần truy cập khi nó bị ngắt kết nối mạng
+   Điều này giúp trình duyệt có thể tải trang web ngay cả khi người dùng bị mất hoặc không có kết nối internet
++ Thông tin meta chỉ định bộ ký tự mà trình duyệt sẽ sử dụng khi hiển thị trang
+
+_____________________ 5 _____________________
+
+	- Thông tin thêm:
++ Thẻ main trong HTML5 giúp các công cụ tìm kiếm và các lập trình viên dễ dàng xác định nội dung trên trang Web
+
+_____________________ 6 _____________________
+
+	- Các thẻ thông dụng:
+	+ Chèn ảnh:
+<img src="link ảnh" alt = "cụm từ">
+
+** "cụm từ" này sẽ xuất hiện nếu ảnh lỗi.
+Ngoài ra nó còn quan trọng khi sử dụng các trình đọc web cho người khiếm thị, có sẽ mô tả hình ảnh để họ có thể hiểu được nội dung ảnh
+
+	+ Gắn link:
+<a href="url">Văn bản hiển thị</a>
+
+	+ Chuyển xuống mục khác trong cùng trang web (giống khi click vào phần nào đó của mục lục sẽ chuyển xuống phần đó)
+<a href="#heading">Docker là gì?</a>
+<h1>Heading thứ nhất này không được nhảy đến</h1>
+<h2 id="heading">Docker là gì?</h2>
+<h2>Heading thứ hai này cũng không được nhảy đến vì nó không có thuộc tính id trong giá trị của href</h1>
+
+_____________________ 7 _____________________
+
++ ol, li: Đánh số
++ ul, li: Ô tròn
+
+1) input:
+	<input type="...">
+type bao gồm
+	"text" (đầu vào văn bản)
+	"password" (đầu vào mật khẩu)
+	"number" (đầu vào số)
+	"email" (đầu vào email)
+	"checkbox" (dạng hộp tích chọn)
+	"radio" (dạng nút radio button)	nhiều loại khác
+
+2) input có tên đầu vào
+	<input type="text" name="username">
+
+3) value: Xác định giá trị mặc định của đầu vào. Giá trị này sẽ được hiển thị trong ô nhập liệu ban đầu
+Ví dụ:
+	<input type="text" value="John Doe">
+
+4) placeholder: Xác định một đề mục hiển thị trong ô nhập liệu khi không có giá trị nào.
+Ví dụ:
+	<input type="text" placeholder="Nhập tên của bạn">
+
+5) required: Xác định xem đầu vào có yêu cầu dữ liệu bắt buộc hay không. Nếu được đặt, người dùng phải nhập vào đầu vào trước khi gửi biểu mẫu.
+Ví dụ:
+	<input type="text" required>
+
+6) Ngoài ra còn các thuộc tính như: disabled, readonly, min, max, step,...
+
+_____________________ 8 _____________________
+
+	- Thẻ form:
+
+<form action="url_xu_ly" method="phuong_thuc">
+  <!-- Các phần tử đầu vào, nút gửi và phần tử khác trong biểu mẫu -->
+</form>
+
+- Trong đó:
++ /url-server là: link chứa chức năng xử lý dữ liệu chứa trong thẻ form gửi lên từ user
++ input là: ô nhập liệu
+
++ Xác định phương thức HTTP được sử dụng để gửi dữ liệu biểu mẫu. Hai phương thức phổ biến là "GET" và "POST".
++ "GET" sử dụng các tham số được gắn vào URL và thường được sử dụng cho các biểu mẫu không nhạy cảm hoặc yêu cầu dữ liệu ít.
++ "POST" gửi dữ liệu như một phần của yêu cầu HTTP và thường được sử dụng cho các biểu mẫu chứa thông tin nhạy cảm hoặc yêu cầu dữ liệu lớn.
+
++ Bên trong thẻ <form>, bạn có thể thêm các phần tử đầu vào (input elements) như <input>, <select>, <textarea>, các nút như <button>, và các phần tử mô tả (label) bằng cách sử dụng thẻ <label>.
+Các phần tử này sẽ thu thập dữ liệu từ người dùng và gửi đến URL hoặc tệp xử lý đã được chỉ định trong thuộc tính action của thẻ <form>
+
+_____________________ 9 _____________________
+
+	- Form có nút submit:
+<form action="/xuly.php" method="post">
+	<!-- Các phần tử đầu vào khác trong biểu mẫu -->
+  	<input type="text" id="fname" name="fname" value="John"><br>
+  	<input type="text" id="lname" name="lname" value="Doe"><br><br>
+
+  	<button type="submit">Gửi</button>
+</form>
+
+
+	- Form có trường thông tin bắt buộc (required) user phải nhập
+<form action="/xuly.php" method="post">
+  	<input type="text" id="name" name="name" required>
+  	<input type="email" id="email" name="email" required>
+
+  	<input type="submit" value="Gửi">
+</form>
+
+_____________________ 10 _____________________
+
+	+ radio button - giống trắc nghiệm 1 đáp án
+<form>
+	<label>
+		<input type="radio" name="gender" value="male"> Male
+  	</label><br>
+  	<label>
+    		<input type="radio" name="gender" value="female"> Female
+  	</label>
+</form>
+
+
+	+ checkbox - giống trắc nghiệm nhiều đáp án
+	Cú pháp:
+<input type="checkbox" name="option" value="value_of_option" id="checkbox_id">
+<label for="checkbox_id">Text of the checkbox</label>
+
+Trong đó,
++ type="checkbox" chỉ định loại đầu vào là checkbox.
++ name là tên của checkbox
++ value là giá trị của checkbox. Nếu không chỉ định giá trị, giá trị mặc định là "on".
++ id là một định danh duy nhất cho checkbox, sẽ được sử dụng để liên kết với nhãn (label).
++ <label> là một thẻ dùng để tạo nhãn cho checkbox. Thuộc tính for của nhãn sẽ chỉ định định danh của checkbox mà nó liên kết với.
+
+_____________________ 11 _____________________
+
+	+ checked
+Thêm checked vào trong thẻ input để đánh dấu vào radio button và 
+
+_____________________ 12 _____________________
+
+
+
+
+_____________________ End _____________________

@@ -1,0 +1,107 @@
+Chương 1: Tổng quan về ứng dụng Web
+_____________________ 1 _____________________
+
++ Web động (dynamic web) là website mà có URL khac nhau đối với mỗi nội dung
+
+- Để xây dựng một trang web, bạn cần phải dựa trên 3 thành phần chính:
++ Phần mềm/Mã nguồn trang web
++ Tên miền
++ Web hosting (máy chủ web)
+	là nơi lưu trữ web, vị trí lưu trữ tệp và nội dung của trang web
+	là những máy tính đặc biệt đặt ở nơi xa xôi
+	có bộ nhớ lớn, bộ xử lý rất mạnh
+	tiếp quản bởi một số công ty (như Bluehost, Dreamhost, Kinsta, Cloudways,...)
+
+_____________________ 2 _____________________
+
+- Ứng dụng web có ba đặc điểm:
++ Nó phải là một ứng dụng – một chương trình có thể thực thi được; có thể được viết bằng ngôn ngữ lập trình thông thường (C/C++, C#, Java, Delphi…) hay ngôn ngữ kịch bản (PHP, ASP…)
++ Nó phải thực thi trên máy chủ web
++ Nó phải tiếp nhận, xử lý và đáp ứng các truy vấn HTTP gửi tới máy chủ web
+
+_____________________ 3 _____________________
+
+- Cách thức hoạt động của Web:
+
+
+_____________________ 4 _____________________
+
+- Một số trường hợp phổ biến mà JavaScript được sử dụng:
+
+1) Validation (Kiểm tra hợp lệ):
+Kiểm tra tính hợp lệ của dữ liệu đầu vào trên các biểu mẫu trang web trước khi gửi dữ liệu lên máy chủ.
+Ví dụ, người dùng đã điền đầy đủ thông tin chưa, kiểm tra định dạng email hợp lệ, kiểm tra mật khẩu đủ mạnh, vv.
+
+2) DOM Manipulation (Xử lý DOM):
+Cho phép thay đổi nội dung và cấu trúc của trang web bằng cách tương tác với DOM (Document Object Model).
+Ví dụ, thêm hoặc xóa phần tử, thay đổi nội dung của phần tử, thay đổi kiểu dáng CSS, vv.
+
+3) Event Handling (Xử lý sự kiện):
+Cho phép xử lý các sự kiện người dùng như nhấp chuột, nhấn phím, hoặc cuộn trang.
+Sử dụng JS, bạn có thể đăng ký các hàm xử lý sự kiện để thực hiện các hành động phản hồi như hiển thị thông báo, thay đổi nội dung, gọi API, vv.
+
+4) AJAX (Asynchronous JS and XML):
+Kết hợp với AJAX cho phép gửi và nhận dữ liệu từ máy chủ mà không cần tải lại toàn bộ trang web.
+Điều này cho phép tạo trải nghiệm tương tác mượt mà, nâng cao hiệu suất và tương tác người dùng.
+
+5) Animation and Effects (Hoạt hình và hiệu ứng):
+Được sử dụng để tạo ra các hiệu ứng hoạt hình, chuyển động và thay đổi trạng thái trên trang web.
+Ví dụ, tạo hiệu ứng chuyển động mượt mà, hiệu ứng hover, hiệu ứng scrolling, vv.
+
+6) Data Manipulation (Xử lý dữ liệu):
+Cho phép xử lý dữ liệu trên trang web một cách linh hoạt.
+Bạn có thể thay đổi, lọc, sắp xếp và tìm kiếm dữ liệu theo yêu cầu người dùng, giúp cải thiện trải nghiệm người dùng.
+
+7) Integration with APIs:
+Cho phép tương tác với các API của các dịch vụ và back-end.
+
+8) Dynamic Content Loading (Tải nội dung động):
+Bạn có thể tải nội dung từ máy chủ một cách động mà không cần tải lại toàn bộ trang web.
+Điều này cho phép tạo ra trải nghiệm tải trang nhanh hơn và tiết kiệm băng thông mạng.
+
+9) Interactive Maps (Bản đồ tương tác):
+Được sử dụng để tích hợp và tạo các bản đồ tương tác trên trang web.
+Ví dụ, tích hợp bản đồ Google Maps và thêm các tính năng như hiển thị địa điểm, điều hướng và tìm kiếm.
+
+10) Drag and Drop (Kéo và thả):
+Cho phép thực hiện tính năng kéo và thả trên trang web.
+Điều này cho phép người dùng kéo và thả các phần tử, thay đổi vị trí và sắp xếp nội dung trực quan trên trang.
+
+11) Data Visualization (Hiển thị dữ liệu):
+Sử dụng các thư viện JS như D3.js hoặc Chart.js.
+Bạn có thể tạo ra biểu đồ, đồ thị và biểu đồ tương tác để hiển thị dữ liệu một cách hấp dẫn và dễ hiểu.
+
+12) User Authentication and Authorization (Xác thực và ủy quyền người dùng):
+Cho phép xác thực người dùng và quản lý phân quyền trên trang web.
+Điều này cho phép kiểm tra đăng nhập, xác thực thông tin người dùng và quản lý quyền truy cập vào các phần của trang web.
+
+13) Web Storage (Lưu trữ web):
+Cung cấp các API như LocalStorage và SessionStorage để lưu trữ dữ liệu trên trình duyệt của người dùng.
+Điều này cho phép lưu trữ thông tin tạm thời hoặc lưu trữ dữ liệu người dùng để sử dụng trong các phiên làm việc tiếp theo.
+
+14) Real-time Communication (Giao tiếp thời gian thực):
+Sử dụng JS và các công nghệ như WebSockets hoặc Server-Sent Events (SSE).
+Các công nghệ này cho phép tạo ra các ứng dụng chat trực tuyến, cập nhật dữ liệu thời gian thực hoặc các trò chơi trực tuyến.
+
+_____________________ 5 _____________________
+
+- Web responsive trong lập trình Front-end là khả năng của một trang web thích nghi và hiển thị tốt trên các thiết bị và kích thước màn hình khác nhau, bao gồm máy tính để bàn, laptop, điện thoại di động và máy tính bảng.
+
+- Để xây dựng một trang web responsive, có một số kỹ thuật và công cụ quan trọng mà lập trình viên Front-end có thể sử dụng:
+
+1) CSS Media Queries: CSS Media Queries cho phép xác định và áp dụng các kiểu CSS khác nhau dựa trên các yếu tố như chiều rộng màn hình, tỷ lệ khung hình và độ phân giải. Bằng cách sử dụng Media Queries, bạn có thể thay đổi cách hiển thị và bố cục của trang web tùy theo kích thước màn hình.
+
+2) Fluid Grids: Fluid grids là một phương pháp để xây dựng bố cục của trang web dựa trên các đơn vị đo không định rõ như phần trăm thay vì các đơn vị đo tuyệt đối như pixel. Bằng cách sử dụng fluid grids, các phần tử trong trang web có thể co dãn và điều chỉnh kích thước tự động để phù hợp với kích thước màn hình.
+
+3) Responsive Images: Để tối ưu hóa hiển thị hình ảnh trên các thiết bị khác nhau, sử dụng các kỹ thuật như srcset và sizes để cung cấp các phiên bản hình ảnh khác nhau dựa trên kích thước màn hình và độ phân giải của thiết bị.
+
+4) Flexbox và CSS Grid: Flexbox và CSS Grid là hai công cụ quan trọng trong CSS để xây dựng bố cục linh hoạt và tạo ra các thiết kế responsive. Flexbox cho phép căn chỉnh, sắp xếp và thay đổi kích thước các phần tử trong một hàng hoặc cột linh hoạt. CSS Grid cho phép tạo ra một lưới linh hoạt để điều chỉnh bố cục trang web.
+
+5) Mobile-First Design là một phương pháp thiết kế trong đó bạn tập trung vào việc phát triển trang web cho các thiết bị di động trước, sau đó mở rộng và tùy chỉnh để phù hợp với các kích thước màn hình lớn hơn. Bằng cách ưu tiên di động trước, bạn đảm bảo rằng trang web của bạn sẽ hiển thị tốt trên các thiết bị có màn hình nhỏ và sau đó điều chỉnh và mở rộng để phù hợp với các thiết bị có màn hình lớn hơn.
+
+_____________________ 6 _____________________
+
+- Để cung cấp dữ liệu cho máy khách, các máy chủ phải triển khai các dịch vụ web trên Back-end.
+Back end của trang web bao gồm máy chủ, cơ sở dữ liệu và các API.
+
+_____________________ End _____________________

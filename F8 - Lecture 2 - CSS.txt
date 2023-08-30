@@ -1,0 +1,301 @@
+CSS
+_____________________ 1 _____________________
+
+	- Có 3 kiểu thay đổi font, color,... của web:
+	+ Internal: Thêm thẻ <style> vào trong thẻ <head> và thay đổi các thuộc tính
+VD:
+<style>
+	h1{
+		color : red;
+		font-size : 20px
+	}
+</style>
+
+	+ External: Tạo file .css
+
+	+ Inline: Thay đổi ngay trong thẻ h1, h2,...
+VD:
+<h1 style="color : red; font-size : 20px">...</h1>
+
+_____________________ 2 _____________________
+
+	- CSS selector
+	+ ID: Dù cùng thẻ h1, h2,... nhưng nếu muốn có thẻ h1 đậm, thẻ h1 nhạt thì không được thay đổi style cả thẻ.
+Khi đó, cần dùng thuộc tính id
+VD:
+<h1 id="heading1">Text1<h1>
+<h1 id="heading2">Text2<h1>	// Ở đây mỗi thẻ có 1 thuộc tính id khác nhau do id KHÔNG ĐƯỢC TRÙNG LẶP
+
+Và, tại file .css,
+#heading1{		// Khác khi css thẻ h là có dấu #
+	color:blue;
+	font-size=10px
+}
+
+	+ Class:
+VD:
+<h1 class="heading1">...<h1>
+<h1 class="heading1">...<h1>	// Ở đây, class đều là heading1 vì CÓ THỂ TRÙNG LẶP
+
+Và, tại file .css,
+.heading1{		// Khác khi css thẻ h là có dấu .
+	color:blue;
+	font-size=10px
+}
+
+	+ Nếu cùng tên class nhưng khác thẻ thì tại file .css
+h2.heading1{
+	...
+}
+h3.heading1{
+	...
+}
+
+	+ Nếu khác class nhưng cùng thuộc tính:
+.class1, .class2, .class3{
+	...
+}
+
+	Hoặc đặt thêm vào các thẻ, 1 text giống hệt nhau
+VD:
+<h1 class="heading1 color-red">...<h1>
+<h2 class="heading2 color-red">...<h1>	
+
+Khi đó, tại .css
+.color-red{
+	color:red
+}
+
+** Xem thêm tại: https://fullstack.edu.vn/learning/html-css?id=98aa429f-66db-42b4-a0c4-5614593e9888
+
+_____________________ 3 _____________________
+
+	- Mức độ ưu tiên trong CSS:
+1. Internal, External: Ưu tiên như nhau, cái nào được viết sau sẽ được sử dụng
+2. Inline - 1000
+3. #id - 100
+4. .class - 10
+5. tag (h1, h2,...) - 1
+
+* !important khi sử dụng để xác định độ ưu tiên thì có có inf điểm
+
+_____________________ 4 _____________________
+
+	- Variable
+Trong file .css, sử dụng 1 lớp giả
+:root {
+	--text-color: red;		// biến toàn cục
+}
+
+h1 {
+	color: var(--text-color);
+}
+h2 {
+	--my-color: green;		// biến cục bộ
+	color: var(--text-color);
+}
+
+_____________________ 5 _____________________
+
+	- Các đơn vị trong CSS
+	+ Đơn vị tuyệt đối
+px, cm, inch,...
+-> Không thay đổi khi thu-kéo trình duyệt
+
+	+ Đơn vị tương đối
+%	- Phụ thuộc thẻ chứa nó 
+
+rem	- Phụ thuộc font-size được định nghĩa trong thử <html>
+
+em	- Phụ thuộc thẻ cha gần nhất chứa nó được định nghĩa font-size
+
+vw	- 1vw bằng 1% chiều ngang trình duyệt. Khác với %
+view width
+vh	- view high
+
+-> Sẽ thay đổi khi thu-kéo trình duyệt
+
+_____________________ 6 _____________________
+
+	- CSS func
++ var()
++ linear-gradient()
++ rgba()	- Màu nhìn qua được
++ rgb()	- Màu không nhìn qua được
++ calc()	- Tính toán VD: calc(120px/2),...
++ attr()
+
+_____________________ 7 _____________________
+
+	- CSS pseudo-class	(lớp giả)
+	+ :root		- bao trùm toàn bộ tài liệu
+	+ :hover		- khi di chuột vào dòng nào thì dòng đó đổi thuộc tính
+VD:	h1:hover
+
+	+ :active		- bấm và giữ chuột sẽ làm đổi thuộc tính
+VD:	li:active
+
+	+ :first-child
+	+ :last-child
+
+** Còn nhiều lớp giả khác -> Tìm hiểu thêm
+
+_____________________ 8 _____________________
+
+	- CSS pseudo elements
++ ::before
++ ::after
++ ::first-letter
++ ::first-line
++ ::selection
+
+	Méo hiểu
+
+_____________________ 9 _____________________
+
+	- padding
+Thêm viền vào xung quanh element, theo thứ tự trên-phải-dướ-trái
+VD: padding: 10px 12px 14 px 16px
+Cách viết: padding: 10px	(cả 4 hướng đều là 10px)
+
+	-border
+Bao chứa padding
+có các thuộc tính
+	border-width, border-color, border-style
+	border-top-width, border-right-width, border-left-width, border-right-width	(mặc định là 3px)
+Cách viết: border: 10px solid red
+
+	-margin
+Dùng để tạo khoảng cách giữa các element
+có các thuộc tính: margin-top, margin-left,...
+
+	- box-sizing
+Dùng để cho chữ cách lề box ??px
+
+_____________________ 10 _____________________
+
+	- background
+	+ background-image: url(link1), url(link2) (img1 đè lên img2)
+Chọn background cho web
+	Hoặc
+	background-image: linear-gradient(0deg, #333, #ccc)
+-> chuyển dần từ màu #333 sang màu #ccc theo hướng 0 độ (từ dưới lên trên)		// hình này không trong suốt nên không thấy các hình ảnh bên dưới nó
+	Để có thể trong suốt thì sử dụng rgba()
+** rgba(r, g, b, a) trong đó a là độ trong suốt nằm trong [0, 1]
+VD: background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(16, 255, 0, 0.2)
+
+	+ background-size: ??px (chiều ngang của web)
+	Hoặc điền 100%
+Ngoài ra, có thể sử dụng:
+		contain (lấy sao cho khớp nhất với web)
+		cover (lấy sao cho không có "phần trắng" trong ảnh nền)
+
+	+ background-repeat: no-repeat
+
+	+ background-origin
+	Giống border, padding. Khi sử dụng, cần thêm các thuộc tính border 
+(hoặc padding), box-sizing
+
+	+ background-position
+Xác định vị trí đặt background, sử dụng 2 từ trong bottom, right, left, top.
+Nếu không viết thì mặc định là center
+VD: background-position: bottom right là ảnh góc dưới bên phải
+	Nếu sử dụng số thì đó là khoảng cách từ lề trái đến ảnh
+TH khác: background-position: top 30px right 20px	
+	-> cách lề trên 30px, lề phải 20px
+
+	+ shorthand
+Viết lại của tất cả nhưng thuộc tính trên vào 1 dòng
+VD: background: url(link) no-repeat center / contain
+	(Đằng trước background-size có dấu /)
+
+_____________________ 11 _____________________
+
+	- position
+Tạo các khung đè lên giao diện web (giống như mục thông báo của các web)
+Các vị trí đặt positon:
+	+ Relative (tương đối): lấy chính nó làm gốc tọa độ và nó không phụ thuộc vào bất cứ yếu tố nào khác
+	VD:
+h1{
+	position: relative;
+	top: 100px		(đẩy chữ trong thẻ h1 xuống dưới 100px và có thể đè lên các chữ khác)
+}
+	** Khác với margin-top: 100px (đẩy toàn bộ xuống, không thể đè)
+
+	+ Absolute (tuyệt đối): lấy thẻ cha gần nhất có thuộc tính position làm gốc tọa độ
+VD: Khi nhấn vào hình chuông sẽ hiện ra hộp thông báo. Khi đó, chuông là thẻ cha và hộp thông báo là thẻ con
+
+	+ Fixed (phụ thuộc khung trình duyệt): mằm tại 1 vị trí duy nhất trong trình duyệt
+
+	+ Sticky (KHÔNG) nên sử dụng)
+
+_____________________ 12 _____________________
+
+	- Căn giữa các item
+	+ text-align: center (đưa text vào chính giữa màn hình theo chiều ngang)
+	+ line-height: ??px (text cách lề trên ??px)
+
+	Cách khác: sử dụng flex
+	.box{
+		display: flex;
+	}
+
+	h3 {
+		margin: auto
+	}
+Trong đó, h3 nằm trong box
+
+_____________________ 13 _____________________
+
+	+ Nếu ảnh bị lỗi thì có thể chọn hình ảnh thay thế
+<img onerror="this.src='/link_ảnh_không_lỗi'" src="link">
+
+_____________________ 14 _____________________
+
+
+
+_____________________ 15 _____________________
+
+
+
+_____________________ 16 _____________________
+
+
+
+_____________________ 17 _____________________
+
+
+
+_____________________ 18 _____________________
+
+
+
+_____________________ 19 _____________________
+
+
+
+_____________________ 20 _____________________
+
+
+
+_____________________ 21 _____________________
+
+
+
+_____________________ 22 _____________________
+
+
+
+_____________________ 23 _____________________
+
+
+
+_____________________ 24 _____________________
+
+
+
+_____________________ 25 _____________________
+
+
+
+_____________________ End _____________________
