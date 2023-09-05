@@ -154,8 +154,8 @@ _____________________ 8 _____________________
 _____________________ 9 _____________________
 
 	- padding
-Thêm viền vào xung quanh element, theo thứ tự trên-phải-dướ-trái
-VD: padding: 10px 12px 14 px 16px
+Thêm viền vào xung quanh element, theo thứ tự trên-phải-dưới-trái
+VD: padding: 10px 12px 14px 16px
 Cách viết: padding: 10px	(cả 4 hướng đều là 10px)
 
 	-border
