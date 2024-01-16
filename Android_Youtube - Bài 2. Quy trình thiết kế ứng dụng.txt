@@ -1,0 +1,258 @@
+Quy trình thiết kế ứng dụng
+_____________________ 1 _____________________
+
+- Các bước thiết kế:
+1. Kéo thả
+2. Ánh xạ
+3. Viết code
+
+_____________________ 2 _____________________
+
+B1: Kéo thả để tạo các TextView,...
+
+	***** File activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewNoiDung"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="401dp"
+        android:text="Hello World!"
+        android:textColor="#ff00"
+        android:textSize="30sp" />
+</RelativeLayout>
+
+
+
+	***** File MainActivity.java
+package com.example.quytrinhthietke;
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    TextView txtNoiDung; // toàn cục
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Bước 2: Ánh xạ
+        txtNoiDung = (TextView) findViewById(R.id.textViewNoiDung);
+
+        // Bước 3: Viết code
+        txtNoiDung.setText("Lập trình Android");
+	// Thay thế NỘI DUNG trong TextView có id là "textViewNoiDung" THÀNH "Lập trình Android"
+    }
+}
+
+_____________________ 3 _____________________
+
+BUTTON
+
+	***** File activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewNoiDung"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="401dp"
+        android:text="Hello World!"
+        android:textColor="#ff00"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/buttonClick"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textViewNoiDung"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="93dp"
+        android:text="Click me"
+        android:textSize="30sp" />
+</RelativeLayout>
+
+
+	***** File MainActivity.java
+package com.example.quytrinhthietke;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+
+    TextView txtNoiDung; // toàn cục
+    Button btnClick;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        // Ánh xạ
+        txtNoiDung = (TextView) findViewById(R.id.textViewNoiDung);
+        btnClick = (Button) findViewById(R.id.buttonClick);
+
+        // Sau khi click mới thấy text
+        btnClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                	// Viết code
+                txtNoiDung.setText("Lập trình Android");
+            }
+        });
+    }
+}
+
+** Sau khi Click vào button thì text mới chuyển
+từ "Hello World!" sang "Lập trình Android"
+
+_____________________ 4 _____________________
+
+EditText (dùng để nhập...)
+
+	***** File activity_main.xml
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/editTextHoTen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="60dp"
+        android:drawableLeft="@drawable/icon_user"
+        android:ems="10"
+        android:hint="Nhập tài khoản"
+        android:inputType="text"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/buttonClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextHoTen"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="100dp"
+        android:text="Xác nhận"
+        android:textSize="30sp" />
+</RelativeLayout>
+
+
+
+	***** File MainActivity.java
+package com.example.quytrinhthietke;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.DialogInterface;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
+public class MainActivity extends AppCompatActivity {
+
+    EditText edtNoiDung;
+    Button btnClick;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        edtNoiDung = (EditText) findViewById(R.id.editTextHoTen);
+        btnClick = (Button) findViewById(R.id.buttonClick);
+
+        btnClick.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String noiDung = edtNoiDung.getText().toString();
+                Toast.makeText(MainActivity.this, noiDung, Toast.LENGTH_LONG).show();
+                // Toast.makeText dùng để in ra thông báo phía dưới màn hình MainActivity,
+                // có nội dung là noiDung trong thời gian Toast.LENGTH_LONG (~4sec)
+                // nhớ thêm .show() để in ra
+            }
+        });
+    }
+}
+
+_____________________ 5 _____________________
+
+	***** File activity_main.xml
+
+
+
+	***** File MainActivity.java
+
+_____________________ 6 _____________________
+
+	***** File activity_main.xml
+
+
+
+	***** File MainActivity.java
+
+_____________________ 7 _____________________
+
+	***** File activity_main.xml
+
+
+
+	***** File MainActivity.java
+
+_____________________ 8 _____________________
+
+
+
+_____________________ 9 _____________________
+
+
+
+_____________________ 10 _____________________
+
+
+_____________________ End _____________________

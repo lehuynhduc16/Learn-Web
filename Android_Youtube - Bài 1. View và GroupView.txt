@@ -1,0 +1,138 @@
+View và ViewGroup
+_____________________ 1 _____________________
+
+- Khái niệm:
++ ViewGroup là toàn màn hình
++ View là tất cả những thứ hiện trên màn hình (button, chữ,...)
+** View nằm trong ViewGroup. Nếu xóa ViewGroup thì View cũng bị xóa theo
+
+- Có 4 loại ViewGroup chính:
++ LinearLayout
++ RelativeLayout
++ FrameLayout
++ TableLayout
+** 2 cái trên được sử dụng nhiều hơn (~90%)
+
+_____________________ 2 _____________________
+
+- Ví dụ về LinearLayout:
+
+<LinearLayout>
+	android:orientation="vertical"		// chiều dọc
+	android:layout_width="match_parent"
+	android:layout_height="match_parent" 	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<TextView
+        	android:background="@color/black"
+        	android:textColor="@color/white"
+        	android:textSize="40sp"
+        	android:text="Android"
+        	android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	/>
+
+	<TextView
+		android:background="#EADB57"
+        	android:textColor="#ED113D"
+        	android:textSize="40sp"
+        	android:text="iOS"
+        	android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	/>
+</LinearLayout>
+
+_____________________ 3 _____________________
+
+- Nhận xét LinearLayout:
++ Trong mỗi Layout có những TextView để in chữ lên màn hình
+
++ Trong Layout có thuộc tính android:orientation
+Có 2 lựa chọn là:
+	"horizontal": xếp các View theo chiều ngang
+	"vertical": xếp các View theo chiều dọc
+
++ Trong Layout hay View có những thuộc tính như:
+	android:background
+        android:textColor
+        android:textSize		// đơn vị là: sp
+        android:text
+        android:layout_width
+        android:layout_height
+
+** layout_width và layout_height có 2 lựa chọn là:
+	"match_parent" (full chiều ngang hoặc dọc)
+	"wrap_content" (vừa bằng kích thước chữ)
+
+_____________________ 4 _____________________
+
++ Nếu muốn chia thành các phần bằng nhau thì sử dụng
+android:layout_weight = "1" ở tất cả các TextView
+
+** weight (trọng số) != width (chiều ngang)
+** khi thêm thuộc tín này thì không cần xóa thuộc tính nào
+
+** khi thay đổi các trọng số khác sau thì chia tỉ lệ các TextView
+
+_____________________ 5 _____________________
+
++ có thể thêm android:weightSum = "??" (VD ="10")
+để tính tổng các phần để chia
+
+VD:
+<LinearLayout>
+	android:orientation="vertical"		// chiều dọc
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:weightSum = "10"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<TextView
+		android:weight = "3"
+        	android:background="@color/black"
+        	android:textColor="@color/white"
+        	android:textSize="40sp"
+        	android:text="Android"
+        	android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	/>
+
+	<TextView
+		android:weight = "7"
+		android:background="#EADB57"
+        	android:textColor="#ED113D"
+        	android:textSize="40sp"
+        	android:text="iOS"
+        	android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	/>
+</LinearLayout>
+
+Tuy nhiên, khi đó PHẢI thay đổi android:layout_width="0dp" để chiều ngang không phụ thuộc vào content
+
+
+
+_____________________ 6 _____________________
+
+- RelativeLayout:
++ LinearLayout thì chỉ có thể xếp vào các góc của màn hình và chúng xếp chồng lên nhau.
++ Còn RelativeLayout thì có thể để vào vị trí bất kỳ trong màn hình
+
+** Khó vl
+
+_____________________ 7 _____________________
+
+- FrameLayout: là khung để chứa các view
++ View sau đè lên view trước
+
+** measureAllChildren = "true"
+
+_____________________ 8 _____________________
+
+- TableLayout: dạng bảng (có hàng, cột)
++ android:stretchColumns="*"		chia đều các cột
+
+_____________________ 9 _____________________
+
+** Constrain Layout **
+
+_____________________ End _____________________
