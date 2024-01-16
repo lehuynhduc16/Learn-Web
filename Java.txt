@@ -1,0 +1,369 @@
+Java
+_____________________ 1 _____________________
+
+Nhập dữ liệu:
+	import java.util.Scanner;
+	........
+	Scanner sc = new Scanner(System.in);
+	int a = sc.next();
+	...
+	char c = sc.next().charAt(0);
+	char e = (char)(sc.next().charAt(0)+2);	//gán e = c+2
+
+_____________________ 2 _____________________
+
+So sánh 2 chuỗi a và b bằng nhau:
+	a.equals(b)
+
+_____________________ 3 _____________________
+
+Khai báo mảng:
+	int a[] = new int[10]		//Tương tự int a[10]
+
+	int a[] = ]{1, 2, 3, 4, 5}		//a[] = {1, 2, 3, 4, 5}
+
+_____________________ 4 _____________________
+
+String to Array:
+	String str = "abc";
+	String[] arr = str.split("");
+		=> arr = ['a', 'b', 'c']
+
+_____________________ 5 _____________________
+
+Max trong mảng arr:
+	import java.util.Arrays;
+	int max = Arrays.stream(arr).max().getAsInt();
+
+_____________________ 6 _____________________
+
+Ký tự thứ n trong chuỗi str:
+	str.charAt(n-1)
+
+_____________________ 7 _____________________
+
+Độ dài chuỗi str:
+	str.length()
+Số ký tự trong array:
+	arr.length
+
+_____________________ 8 _____________________
+
+Phương thức toCharArray()	=> Str to array:
+	String s = "Hello";
+	for(char c:s.toCharArray()) {
+		System.out.println(c);
+	}
+		=> ['H', 'e', 'l', 'l', 'o']
+
+_____________________ 9 _____________________
+
+Phương thức replace		=> Thay thế xâu
+	System.out.println("Cod3l3arn".replace('3', 'e'));
+		=> Codelaern
+	System.out.println("Blackcat".replace("Black", "White"));
+		=> Whitecat
+
+_____________________ 10 _____________________
+
+Phương thức toUpperCase/toLowerCase
+	s = s.toUpperCase()
+	s = s.toLowerCase()
+
+_____________________ 11 _____________________
+
+Phương thức indexOf		=> Trả về vị trí xuất hiện đầu tiên của một str trong str khác, nếu không tìm thấy thì trả về -1
+	String s = "Codelearn";
+	System.out.println(s.indexOf("learn"));
+		=> 4
+	System.out.println(s.indexOf("black"));
+		=> -1
+
+_____________________ 12 _____________________
+
+Phương thức startsWith và endsWith	=> Kiểm tra một str có bắt đầu hoặc kết thúc băng một str khác không
+	String name = "Codelearn";
+	System.out.println(name.startsWith("Code"))
+		=> true
+	System.out.println(name.startsWith("abc"));
+		=> false
+	System.out.println(name.endsWith("rn"));
+		=> true
+	System.out.println(name.endsWith("z"));
+		=> false
+
+_____________________ 13 _____________________
+
+Phương thức split	=> Tách một xâu ra thành mảng các xâu dựa trên một xâu cho trước
+	String s = "Hello World!";
+	String[] words = s.split(" ");
+	for(String word:words) {
+		System.out.println(word);
+	}
+		=>	Hello
+			World!
+
+_____________________ 14 _____________________
+
+Phương thức substring	=> Lấy ra một xâu con dựa trên chỉ số bắt đầu và chỉ số kết thúc của một xâu khác
+	String name = "Codelearn";
+	System.out.println(name.substring(0, 2));	
+		=> Co
+	System.out.println(name.substring(0, 4));	
+		=>Code
+	System.out.println(name.substring(4));
+		=> learn
+
+_____________________ 15 _____________________
+
+Loại bỏ số khỏi str:
+	String s = "Ngu9846v0384l"
+	for (char c = '0'; c <= '9'; c++){
+		s = s.replace(c + "", "");
+	}
+		=> Nguvl
+
+_____________________ 16 _____________________
+
+Đảo str:
+	String answer = "";
+	for (int i = s.length() - 1; i >= 0; i--){
+		answer += s.charAt(i);
+	}
+	System.out.print(answer);
+
+_____________________ 17 _____________________
+
+final - gắn một số không đổi
+	final pi = 3.14
+		=> pi luôn băng 3.14
+
+_____________________ 18 _____________________
+
+MAX_VALUE, MIN_VALUE - GTLN và GTNN mà kiểu dữ liệu có thể chứa
+	System.out.println( Integer.MAX_VALUE );
+		=> 2147483647
+
+_____________________ 19 _____________________
+
+Cấu trúc switch biến thể:
+	switch(month):
+	case 1:
+	case 3:
+	case ...:
+	case 12:
+		System.out.print("31 days");
+		break;
+	... Tương tự
+	... Tương tự
+	default:
+		System.out.print("DEFAULT");
+
+_____________________ 20 _____________________
+
+BigInteger - Số nguyên cực lớn
+	import java.math.BigInteger
+
+	add=a.add(b)				// add = a+b
+	sub=a.subtract(b)			// sub = a-b
+	mul=a.multiply(b)			//mul = a*b
+	div=a.division(b)				//div = a/b
+	n = new BigInteger.valueOf(54)	//n = 54
+
+_____________________ 21 _____________________
+
+	for (int i: arr)	// Tương tự for i in arr
+
+_____________________ 22 _____________________
+
+Random
+	Random rd = new Random();
+	Scanner sc = new Scanner(System.in);
+	int n = sc.nextInt();
+	int arr[] = new int[n];
+	for(int i = 0; i < n; i++){
+		arr[i] = rd.nextInt(m);
+	}
+		=> Lưu mảng có n phần tử các giá trị random từ [0, m-1]
+
+_____________________ 23 _____________________
+
+ArrayList
+	ArrayList <Tên mảng> = new ArrayList();
+	ArrayList <Kiểu dữ liệu> <Tên mảng> = new ArrayList();
+		Ví dụ: ArrayList Integer arr = new ArrayList();
+
+Các phương thức chính trong ArrayList:
+	add(object)			thêm phần tử
+	remove(object)			xóa phần tử
+	get(index)					Ví dụ: arr.get(2)	-> arr[2]
+	size()					số phần tử trong ArrayList
+	isEmpty()				
+	contains(object)			
+	clear()				xóa ArrayList
+
+_____________________ 24 _____________________
+
+HashMap
+	HashMap<Integer, String>map = new HashMap<Integer, String>();
+
+Các phương thức chính trong HashMap:
+	put(obj key, obj value)		thêm phần tử
+	remove(object)			xóa phần tử
+	get(index)					Ví dụ: arr.get(2)	-> arr[2]
+	size()					số phần tử trong ArrayList
+	isEmpty()				
+	containsKey(object key)	Kiểm tra key có tồn tại không
+	containsValue(object value)	Kiểm tra value có tồn tại không
+
+_____________________ 25 _____________________
+
+String -> Int, Double
+Ví dụ 1:	String str1 = "12";
+		int i = Integer.parseInt(str1);
+			=> i = 12
+
+Ví dụ 2:	String str2 = "45.67";
+		double d = Double.parseDouble(str2);
+			=> d = 45.67
+
+_____________________ 26 _____________________
+
+
+
+_____________________ 27 _____________________
+
+
+
+_____________________ 28 _____________________
+
+
+
+_____________________ 29 _____________________
+
+
+
+_____________________ 30 _____________________
+
+
+
+_____________________ 31 _____________________
+
+
+
+_____________________ 32 _____________________
+
+
+
+_____________________ 33 _____________________
+
+
+
+_____________________ 34 _____________________
+
+
+
+_____________________ 35 _____________________
+
+DecimalFormat - Làm tròn sau dấu phẩy
+	import java.text.DecimalFormat;
+
+	double a = 3/7f;
+	DecimalFormat  dcf = new DecimalFormat("#.###");
+	System.out.print(dcf.format(a));
+		=> 0.429
+
+_____________________ 36 _____________________
+
+DecimalFormatSymbols - Đặt dấu phẩy ở phần nghìn, triệu, tỷ, ...
+	import java.text.DecimalFormat;
+	import java.text.DecimalFormatSymbols;
+	import java.util.Locale;
+
+	int a = 1357986420;
+	DecimalFormat dcf = new DecimalFormat("#,###");
+	DecimalFormatSymbols dcfs =
+		new DecimalFormatSymbols(Locale.getDefault());
+	dcf.setDecimalFormatSymbols(dcfs);
+	System.out.print(dcf.format(a));
+		=> 1,357,986,420
+
+_____________________ 37 _____________________
+
+Calendar
+	import  java.util.Calendar;
+
++ Ngày, tháng, năm hiện tại:
+	Calendar cal = Calendar.getInstance();
++ Lấy từng tiêu chí:
+	cal.get(Calendar.YEAR);
+	cal.get(Calendar.MONTH);
+	cal.get(Calendar.DAY_OF_MONTH);
++ Thay đổi tiêu chí:
+	cal.set(Calendar.YEAR. 1990);
++ Lấy ngày tháng năm:
+	Date t = cal.getTime();
+
+Ví dụ:
+	Calendar cal = Calendar.getInstance();		// Ngày, tháng năm hiện tại
+	int day = cal.get(Calendar.DAY_OF_MONTH);
+	int month = cal.get(Calendar.MONTH);
+	int year = cal.get(Calendar.YEAR);
+	System.out.println(day);
+	System.out.println(month+1);			// Month tính từ 0->11
+	System.out.print(year);
+		=> In ra ngày, tháng, năm HIỆN TẠI
+
+_____________________ 38 _____________________
+
+SimpleDateFormat
+	import java.text.SimpleDateFormat;
+	import java.util.Calendar;
+	import java.util.Date;
+
+	SimpleDateFormat sdf =
+		new SimpleDateFormat("HH:mm:ss dd/MM/yyyy");
+	System.out.println(sdf.format(t));
+							//HH chỉ 24h
+	SimpleDateFormat sdf2 =
+		new SimpleDateFormat("hh:mm:ss aaa dd/MM/yyyy");
+	System.out.println(sdf2.format(t));
+							//hh chỉ 12h
+		=> In ra	HH:mm:ss dd/MM/yyyy
+				hh:mm:ss (AM/PM) dd/MM/yyyy
+
+_____________________ 39 _____________________
+
+StringBuilder
+	import java.lang.StringBuilder;
+append - Ví dụ:
+	StringBuilder sb = new StringBuilder();
+	sb.append("Hello");
+	sb.append("World");
+	sb.append("\n");
+	sb.append("Java");
+	String s = sb.toString();
+	System.out.print(s);
+		=>	Hello World
+			Java
+insert(offset, str) - Ví dụ :
+	StringBuilder sb = new StringBuilder();
+	sb.append("HelloWorld");
+	sb.insert(4, "AoThatDay");
+	String s = sb.toString();
+	System.out.print(s);
+		=> HellAoThatDayoWorld
+
+delete(start, end+1) - Ví dụ:
+	StringBuilder sb = new StringBuilder();
+	sb.append("HelloWorld");
+	sb.delete(4, 7);
+	String s = sb.toString();
+	System.out.print(s);
+		=> Hellrld
+
+_____________________ 40 _____________________
+
+StringTokenizer
+
+_____________________ End _____________________
