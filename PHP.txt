@@ -6,7 +6,7 @@ _____________________ 1 _____________________
 $name = "John";
 
 	+ In ra màn hình:
-echo "Hello, " . $name . "!";	// in ra: Hello, John!
+echo "Hello, " . $name . "!";		// in ra: Hello, John!
 ** Dấu "." và "," đều có thể dùng để nối chuỗi	
 	+ Comment:	// và /*  */
 
@@ -16,14 +16,14 @@ echo "Nhập tên của bạn: ";
 $handle = fopen("php://stdin","r");
 $line = fgets($handle);
 $name = trim($line);
-echo "Xin chào, $name!\n";	// Xử lý và hiển thị dữ liệu
+echo "Xin chào, $name!\n";		// Xử lý và hiển thị dữ liệu
 fclose($handle);
 ?>
 
 	+ Biến toàn cục:
 $bientoancuc = 'freetuts.net';
 function test_freetuts(){
-    global $bientoancuc; // gọi đến biến toàn cục
+    global $bientoancuc; 		// gọi đến biến toàn cục
     echo $bientoancuc;
 }
 test_freetuts();
@@ -37,26 +37,26 @@ define(‘ten_hang’, ‘gia_tri’);
 _____________________ 2 _____________________
 
 	- Kiểu dữ liệu INT
-$thap_phan = 123; // Số thập phân
-$so_am = -123; // Số âm
-$bat_phan = 0123; // số bát phân
-$thap_luc_phan = 0x1A; // và số thập lục phân
+$thap_phan = 123; 	// Số thập phân
+$so_am = -123; 		// Số âm
+$bat_phan = 0123; 	// số bát phân
+$thap_luc_phan = 0x1A; 	// và số thập lục phân
 
 	+ Ép kiểu sang int:
 (int)$ten_bien;
 
 	+ Kiểm tra một biến có phải INT?
-$a = '123';	// kiểu str
+$a = '123';		// kiểu str
 $b = 123;		// kiểu int
-$c = $a + $b; 	// $c = 246 -> kiểu INT (do $a tự đổi kiểu sang INT)
+$c = $a + $b; 		// $c = 246 -> kiểu INT (do $a tự đổi kiểu sang INT)
 var_dump(is_int($c)); 	// in ra true
-var_dump(is_int($a));		// in ra false
+var_dump(is_int($a));	// in ra false
 
 	+ Ép kiểu (tiếp...)
 $a = 'a123';
-echo (int)$a; 	// in ra 0
+echo (int)$a; 		// in ra 0
 $a = '12a0';
-echo (int)$a; 	// in ra 12
+echo (int)$a; 		// in ra 12
 
 _____________________ 3 _____________________
 
@@ -77,7 +77,7 @@ _____________________ 4 _____________________
 	- Mảng:
 $ten_mang = array(a1, a2,...);	// khai báo
 var_dump($mang);		// in ra các phần tử
-print_r($mang);		// in ra bằng cách 2
+print_r($mang);			// in ra bằng cách 2
 	Ví dụ:
 $mang = array('a', 'b');
 
@@ -89,11 +89,11 @@ var_dump($mang);
                 		string(1) "b"
             		}
 print_r($mang);			// in bằng cách 2
-	// in ra:	Array
-            		(
+	// in ra:	Array (
                 		[0] => a
                 		[1] => b
            		 )
+
 ** Sự khác nhau giữa echo, var_dump, print_r
 + echo in ra màn hình
 + var_dump ngoài in ra còn cho biết kiểu dữ liệu, kích thước (của mảng,...)
@@ -117,7 +117,7 @@ print_r($sinhvien);
 _____________________ 5 _____________________
 
 - Toán tử quan hệ:
-$a = ’123′
+$a = '123'
 $b = 123
 ->	phép ($a == $b) cho kết quả là true
 ->	phép ($a === $b) cho kết quả false vì khác kiểu dữ liệu
@@ -143,7 +143,7 @@ foreach ($nam as $key => $value){
 
 	+ Cách khác (nếu chỉ muốn lấy value)
 foreach ($nam as $value){
-    echo $value;
+	echo $value;
 }
 
 _____________________ 7 _____________________
@@ -152,9 +152,9 @@ _____________________ 7 _____________________
 	+ goto
 $a = $b = 12;
 echo $a;
-goto label_end;	// nhảy xuống dòng cuối cùng
+goto label_end;		// nhảy xuống dòng cuối cùng
 echo $b;
-label_end;			// chỉ in a mà không in b
+label_end;		// chỉ in a mà không in b
 
 	+ die() và exit() có chức năng tương tự nhau
 Khi gặp lệnh này, chương trình sẽ kết thúc ngay lập tức
@@ -271,10 +271,10 @@ Kiểm tra giá trị $needle có nằm trong mảng $haystackarray không. tr�
 	+ array_key_exists($key, $searcharray)
 Kiểm tra key $key có tồn tại trong mảng $searcharray không, trả về true nếu có và false nếu không có.
 
-	+ array_unique( $array )
+	+ array_unique($array)
 Loại bỏ giá trị trùng trong mảng $array
 
-	+ array_values ($array )
+	+ array_values ($array)
 Chuyển mảng $array sang dạng mảng chỉ mục.
 
 _____________________ End ____________________
