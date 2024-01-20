@@ -22,7 +22,7 @@ _____________________ 2 _____________________
 
 + thẻ <s>: gạch ngang văn bản
 
-+ thẻ <hr> ~ \n (xuống dòng - horizontal rule)
++ thẻ <hr> ~ -------------------- (xuống dòng và vẽ đường kẻ ngang - horizontal rule)
 
 _____________________ 3 _____________________
 
