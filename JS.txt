@@ -90,7 +90,7 @@ for (let value of iterable) {
 
 _____________________ 4 _____________________
 
-	+ Chuyển  int sang string:
+	+ Chuyển int sang string:
 a = 4;
 a = a.toString();
 
@@ -239,14 +239,14 @@ _____________________ 7 _____________________
 	+ Array.concat()	// nối 2 hoặc nhiều mảng với nhau
 Ví dụ: nums = num1.concat(num2, num3);
 
-	+ Array.every()		// kiểm tra tất cả các phần tử trong arr có thỏa mã điều kiện nào đó không
+	+ Array.every()		// kiểm tra tất cả các phần tử trong arr có thỏa mãn điều kiện nào đó không
 Cú pháp: arr.every(callback(element[, index[, array]])[, thisArg])
 Trong đó:
-callback: Một hàm để kiểm tra cho từng phần tử, lấy ba đối số:
+	callback: Một hàm để kiểm tra cho từng phần tử, lấy ba đối số:
 	element: Phần tử hiện tại đang được xử lý trong mảng.
 	index (Optional): Chỉ mục của phần tử hiện tại đang được xử lý trong mảng.
-array (Optional): Các mảng được gọi theo.
-thisArg: Một giá trị để sử dụng như thế này khi thực hiện callback.
+	array (Optional): Các mảng được gọi theo.
+	thisArg: Một giá trị để sử dụng như thế này khi thực hiện callback.
 
 	Ví dụ:
 function isBelowThreshold(currentValue) {
@@ -359,16 +359,16 @@ function run(name) {
 
 + substr()             	    	// Nó được sử dụng để tìm nạp một phần của chuỗi đã cho trên cơ sở vị trí và độ dài bắt đầu được chỉ định.
 + substring()          	    	// Nó được sử dụng để tìm nạp một phần của chuỗi đã cho trên cơ sở chỉ mục đã chỉ định.
-+ slice()          		    	// Nó được sử dụng để tìm nạp một phần của chuỗi đã cho. Nó cho phép chúng ta gán chỉ số tích cực cũng như tiêu cực.
++ slice()          		// Nó được sử dụng để tìm nạp một phần của chuỗi đã cho. Nó cho phép chúng ta gán chỉ số tích cực cũng như tiêu cực.
 + toLowerCase()      	    	// Nó chuyển đổi chuỗi đã cho thành chữ thường.
-+ toLocaleLowerCase()	// Nó chuyển đổi chuỗi đã cho thành chữ thường trên cơ sở ngôn ngữ hiện tại của máy chủ.
-+ toUpperCase()       	// Nó chuyển đổi chuỗi đã cho thành chữ in hoa.
-+ toLocaleUpperCase()	// Nó chuyển đổi chuỗi đã cho thành chữ in hoa trên cơ sở ngôn ngữ hiện tại của máy chủ.
++ toLocaleLowerCase()		// Nó chuyển đổi chuỗi đã cho thành chữ thường trên cơ sở ngôn ngữ hiện tại của máy chủ.
++ toUpperCase()       		// Nó chuyển đổi chuỗi đã cho thành chữ in hoa.
++ toLocaleUpperCase()		// Nó chuyển đổi chuỗi đã cho thành chữ in hoa trên cơ sở ngôn ngữ hiện tại của máy chủ.
 + toString()          		// Nó cung cấp một chuỗi đại diện cho đối tượng cụ thể.
 + valueOf()            		// Nó cung cấp giá trị nguyên thủy của đối tượng chuỗi.
-+ split()          			// Biến 1 chuỗi thành 1 mảng các chuỗi, bằng cách tách chuỗi theo ký tự dc chỉ định.
++ split()          		// Biến 1 chuỗi thành 1 mảng các chuỗi, bằng cách tách chuỗi theo ký tự dc chỉ định.
 + includes()           		// Xác định xem một chuỗi có thể được tìm thấy trong một chuỗi khác hay không, trả về true hoặc false khi thích hợp.
-+ trim()				// Xóa bỏ khoảng trắng ở đầu vào cuối chuỗi.
++ trim()			// Xóa bỏ khoảng trắng ở đầu vào cuối chuỗi.
 + trimStart() / trimLeft() 	// Xóa bỏ khoảng trống bên trái/bắt đầu của chuỗi.
 + trimEnd() / trimRight()	// Xóa bỏ khoảng trống bên phải/kết thúc của chuỗi.
 
@@ -385,8 +385,8 @@ VD: console.log(Math.hypot(3, 4))	-> in ra 5
 _____________________ 10 _____________________
 
 	- Số học (thư viện Number):
-+ Number.isFinite()       // Xác định xem giá trị đã cho có phải là số hữu hạn hay không.
-	VD: Number.isFinite(1/0); 		// in ra false
++ Number.isFinite()       		// Xác định xem giá trị đã cho có phải là số hữu hạn hay không.
+	VD: Number.isFinite(1/0); 	// in ra false
 	      Number.isFinite(10/5); 	// in ra true
 
 + Number.isInteger()      // Xác định xem giá trị đã cho có phải là số nguyên hay không.
@@ -402,49 +402,5 @@ _____________________ 10 _____________________
 
 + Kiểm tra một số có phải SỐ không
 	isNaN(n) == false			// isNaN in ra true nếu n không phải số, và ngược lại
-
-
-
-
-
-_____________________ 11 _____________________
-
-
-
-_____________________ 12 _____________________
-
-
-
-_____________________ 13 _____________________
-
-
-
-_____________________ 14 _____________________
-
-
-
-_____________________ 15 _____________________
-
-
-
-_____________________ 16 _____________________
-
-
-
-_____________________ 17 _____________________
-
-
-
-_____________________ 18 _____________________
-
-
-
-_____________________ 19 _____________________
-
-
-
-_____________________ 20 _____________________
-
-
 
 _____________________ End ____________________
